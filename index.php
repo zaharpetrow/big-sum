@@ -1,16 +1,7 @@
 <?php
 
-require_once 'Cacher.php';
-
 class MyClass
 {
-
-    private $cacher;
-
-    public function __construct()
-    {
-        $this->cacher = new Cacher();
-    }
 
     private function validate(array $integers)
     {
