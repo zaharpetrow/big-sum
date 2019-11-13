@@ -1,6 +1,6 @@
 <?php
 
-class MyClass
+class AdditionLargeNumbers
 {
 
     private function validate(array $integers)
@@ -64,27 +64,22 @@ class MyClass
     private function sum_array(): string
     {
         $result      = '0';
-        $resultArray = [];
-        $fileRows    = file('file');
+        $fileRows    = file('file.txt');
 
         foreach ($fileRows as $row) {
             $row           = preg_replace('/[^\d\.]/', '', $row);
-            $resultArray[] = $row;
             $result        = $this->sum_2_long_integers($result, $row);
         }
-        $resultArray[]=$result;
-
-        print_r($resultArray);
 
         return $result;
     }
 
-    public function func()
+    public function init()
     {
-        $this->sum_array();
+        return $this->sum_array();
     }
 
 }
 
 echo '<pre>';
-print_r((new MyClass())->func());
+print_r((new AdditionLargeNumbers())->init());
